@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ 	<head>
+ 		<!-- Meta Tags -->
+		<meta charset="UTF-8">
+		<meta name="author" content="Kamran Mubarik">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Title -->
+ 		<title>E-Commerce Compu Express</title>
+ 		<!-- Style Sheet -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!-- Javascript -->	
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+  		<script>
+  			$(document).ready(function(){
+  				
+  				$('.prev').on("click", function(){
+
+  					var prev = $(this).closest('.qty').find("input").val();
+  					
+  					if (prev == 1) {
+  						$(this).closest('.qty').find("input").val('1');
+  					}else{
+  						var prevVal = prev - 1;
+  						$(this).closest('.qty').find("input").val(prevVal);
+  					}  					
+  				});
+  				$('.next').on("click", function(){
+
+  					var next = $(this).closest('.qty').find("input").val();
+  					
+  					if (next == 10) {
+  						$(this).closest('.qty').find("input").val('10');
+  					}else{
+  						var nextVal = ++next;
+  						$(this).closest('.qty').find("input").val(nextVal);
+  					}  					
+  				});
+  			});
+  		</script>
+ 	</head>
+<body>
+
+	<header>
+		<div class="container">
+			<div class="brand">
+				<div class="logo">
+					<a href="index.html">
+						<img src="img/icons/online_shopping.png">
+						<div class="logo-text">
+							<p class="big-logo">Ecommerce</p>
+							<p class="small-logo">Compu Express</p>
+						</div>
+					</a>
+				</div> <!-- logo -->
+				<div class="shop-icon">
+					<div class="dropdown">
+						<img src="img/icons/account.png">
+						<div class="dropdown-menu">
+							<ul>
+								<li><a href="account.html">Mi Cuenta</a></li>
+								<li><a href="orders.html">Mis Pedidos</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="dropdown">
+						<img src="img/icons/heart.png">
+						<div class="dropdown-menu wishlist-item">
+							<table border="1">
+								<thead>
+									<tr>
+										<th>Imagen</th>
+										<th>Producto</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><img src="img/product/img1.jpg"></td>
+										<td>Mouse Redragon Impact</td>
+									</tr>
+									<tr>
+										<td><img src="img/product/img2.jpg"></td>
+										<td>Teclado Logitech K400</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="dropdown">
+						<img src="img/icons/shopping_cart.png">
+						<div class="dropdown-menu cart-item">
+							<table border="1">
+								<thead>
+									<tr>
+										<th>Imagen</th>
+										<th>Producto</th>
+										<th class="center">Precio</th>
+										<th class="center">Cant.</th>
+										<th class="center">Monto</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><img src="img/product/img1.jpg"></td>
+										<td>product name</td>
+										<td class="center">450</td>
+										<td class="center">2</td>
+										<td class="center">900</td>
+									</tr>
+									<tr>
+										<td><img src="img/product/img2.jpg"></td>
+										<td>product name</td>
+										<td class="center">4500</td>
+										<td class="center">2</td>
+										<td class="center">9000</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- shop icons -->
+			</div> <!-- brand -->
+
+			<div class="menu-bar">
+				<div class="menu">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="shop.html">Tienda</a></li>
+						<li><a href="about.html">Nosotros</a></li>
+						<li><a href="contact.html">Contacto</a></li>
+					</ul>
+				</div>
+				<div class="search-bar">
+					<form>
+						<div class="form-group">
+							<input type="text" class="form-control" name="search" placeholder="Buscar">
+							<img src="img/icons/search.png">
+						</div>
+					</form>
+				</div>
+			</div> <!-- menu -->
+		</div> <!-- container -->
+	</header> <!-- header -->
+
+	<div class="container">
+		<main>
+			<div class="breadcrumb">
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li> / </li>
+					<li><a href="shop.html">Tienda</a></li>
+					<li> / </li>
+					<li>Cart</li>
+				</ul>
+			</div> <!-- End of Breadcrumb-->
+
+			<h2>Carrito de Compras</h2>
+			<div class="cart-page">
+				<div class="cart-items">					
+					<table>
+						<thead>
+							<tr>
+								<th colspan="3">Items del Carrito</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="width: 20%;"><img src="img/product/img1.jpg"></td>
+								<td style="width: 60%;">
+									<h2>Mouse Redragon Impact M908</h2>
+									<p>6 botones programables optimizados</p>
+									<p>Luz RGB</p>
+									<p>Modelo del sensor: PIXART 3360 óptico</p>
+									<p>Rueda de desplazamiento antideslizante</p>
+									<br>
+									<h3>Precio: $450</h3>
+									<br>
+									<a href="">x</a> Quitar
+								</td>
+								<td class="qty" style="width: 15%;">
+									<div class="prev">-</div>
+									<div class="next">+</div>
+									<input type="number" name="cartNumber" class="cartNumber" value="1" min="1" max="10">
+									<br><br>
+									<h3>450</h3>
+								</td>
+							</tr>
+							<tr>
+								<td style="width: 20%;"><img src="img/product/img2.jpg"></td>
+								<td style="width: 60%;">
+									<h2>Teclado Logitech K400</h2>
+									<p >Tteclado silencioso fácil de utilizar, con un touchpad integrado y todas las teclas de acceso rápido favoritas de los usuarios de Windows y Android.</p>
+									<br>
+									<h3>Precio: 4500</h3>
+									<br>
+									<a href="">x</a> Quitar
+								</td>
+								<td class="qty" style="width: 15%;">
+									<div class="prev">-</div>
+									<div class="next">+</div>
+									<input type="number" name="cartNumber" class="cartNumber" value="1" min="1" max="10">
+									<br><br>
+									<h3>4500</h3>
+								</td>
+							</tr>
+							<tr>
+								<td style="width: 20%;"><img src="img/product/img3.jpg"></td>
+								<td style="width: 60%;">
+									<h2>Teclado T-Dagger Arena T-TGK321</h2>
+									<p>Resiste a salpicaduras. </p>
+									<p>Función antighosting incorporada.</p>
+									<p>Tipo de teclado: mecánico.</p>
+									<p>Tecla cilíndrica.</p>
+									<br>
+									<h3>Precio: 4000</h3>
+									<br>
+									<a href="">x</a> Quitar
+								</td>
+								<td class="qty" style="width: 15%;">
+									<div class="prev">-</div>
+									<div class="next">+</div>
+									<input type="number" name="cartNumber" class="cartNumber" value="1" min="1" max="10">
+									<br><br>
+									<h3>4000</h3>
+								</td>
+							</tr>						
+						</tbody>	
+					</table>
+					<div class="pagination">
+						<ul>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="cart-summary">
+					<div class="checkout-total">
+						<h3>Resumen Carrito</h3>
+						<ul>
+							<li>Numero de Productos x15</li>
+							<li>Numero de Items x20</li>
+							<hr>
+							<li>Total <span style="float: right;">8950</span></li>
+							<li><a href="checkout.html">Ir a Checkout</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>		
+		</main> <!-- Main Area -->
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="footer-widget">
+				<div class="widget">
+					<div class="widget-heading">
+						<h3>Links Importantes</h3>
+					</div>
+					<div class="widget-content">
+						<ul>
+							<li><a href="about.html">Nosotros</a></li>
+							<li><a href="contact.html">Contacto</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="widget">
+					<div class="widget-heading">
+						<h3>Informacion</h3>
+					</div>
+					<div class="widget-content">
+						<ul>
+							<li><a href="account.html">Mi Cuenta</a></li>
+							<li><a href="orders.html">Mis Pedidos</a></li>
+							<li><a href="cart.html">Carrito</a></li>
+							<li><a href="checkout.html">Checkout</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="widget">
+					<div class="widget-heading">
+						<h3>Siguenos!</h3>
+					</div>
+					<div class="widget-content">
+						<div class="follow">
+							<ul>
+								<li><a href="#"><img src="img/icons/facebook.png"></a></li>
+								<li><a href="#"><img src="img/icons/twitter.png"></a></li>
+								<li><a href="#"><img src="img/icons/instagram.png"></a></li>
+							</ul>
+						</div>						
+					</div>
+					<div class="widget-heading">
+						<h3>Suscribete!</h3>
+					</div>
+					<div class="widget-content">
+						<div class="subscribe">
+							<form>
+								<div class="form-group">
+									<input type="text" class="form-control" name="subscribe" placeholder="Email">
+									<img src="img/icons/paper_plane.png">
+								</div>
+							</form>
+						</div>						
+					</div>
+				</div>
+			</div> <!-- Footer Widget -->
+			<div class="footer-bar">
+				<div class="copyright-text">
+					<p>Copyright 2022 - All Rights Reserved</p>
+				</div>
+				<div class="payment-mode">
+					<img src="img/icons/paper_money.png">
+					<img src="img/icons/visa.png">
+					<img src="img/icons/mastercard.png">
+				</div>
+			</div> <!-- Footer Bar -->
+		</div>
+	</footer> <!-- Footer Area -->
+
+</body>
+
+</html>

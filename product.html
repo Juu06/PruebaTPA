@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ 	<head>
+ 		<!-- Meta Tags -->
+		<meta charset="UTF-8">
+		<meta name="author" content="Kamran Mubarik">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Title -->
+ 		<title>E-Commerce Compu Express</title>
+ 		<!-- Style Sheet -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!-- Javascript -->	
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<!-- FancyBox -->
+		<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+
+		<!-- Optionally add helpers - button, thumbnail and/or media -->
+		<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js"></script>
+		<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js"></script>
+
+		<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
+		<script>
+		$(document).ready(function(){		
+			$('.fancybox').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+		});
+
+  		</script>
+ 	</head>
+<body>
+
+	<header>
+		<div class="container">
+			<div class="brand">
+				<div class="logo">
+					<a href="index.html">
+						<img src="img/icons/online_shopping.png">
+						<div class="logo-text">
+							<p class="big-logo">Ecommerce</p>
+							<p class="small-logo">Compu Express</p>
+						</div>
+					</a>
+				</div> <!-- logo -->
+				<div class="shop-icon">
+					<div class="dropdown">
+						<img src="img/icons/account.png">
+						<div class="dropdown-menu">
+							<ul>
+								<li><a href="account.html">Mi Cuenta</a></li>
+								<li><a href="orders.html">Mis Pedidos</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="dropdown">
+						<img src="img/icons/heart.png">
+						<div class="dropdown-menu wishlist-item">
+							<table border="1">
+								<thead>
+									<tr>
+										<th>Imagen</th>
+										<th>Producto</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><img src="img/product/img1.jpg"></td>
+										<td>Mouse Redragon Impact</td>
+									</tr>
+									<tr>
+										<td><img src="img/product/img2.jpg"></td>
+										<td>Teclado Logitech K400</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="dropdown">
+						<img src="img/icons/shopping_cart.png">
+						<div class="dropdown-menu cart-item">
+							<table border="1">
+								<thead>
+									<tr>
+										<th>Imagen</th>
+										<th>Producto</th>
+										<th class="center">Precio</th>
+										<th class="center">Cant.</th>
+										<th class="center">Monto</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><img src="img/product/img1.jpg"></td>
+										<td>product name</td>
+										<td class="center">450</td>
+										<td class="center">2</td>
+										<td class="center">900</td>
+									</tr>
+									<tr>
+										<td><img src="img/product/img2.jpg"></td>
+										<td>product name</td>
+										<td class="center">4500</td>
+										<td class="center">2</td>
+										<td class="center">9000</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- shop icons -->
+			</div> <!-- brand -->
+
+			<div class="menu-bar">
+				<div class="menu">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="shop.html">Tienda</a></li>
+						<li><a href="about.html">Nosotros</a></li>
+						<li><a href="contact.html">Contacto</a></li>
+					</ul>
+				</div>
+				<div class="search-bar">
+					<form>
+						<div class="form-group">
+							<input type="text" class="form-control" name="search" placeholder="Buscar">
+							<img src="img/icons/search.png">
+						</div>
+					</form>
+				</div>
+			</div> <!-- menu -->
+		</div> <!-- container -->
+	</header> <!-- header -->
+
+	<div class="container">
+		<main>
+			<div class="breadcrumb">
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li> / </li>
+					<li><a href="">Tienda</a></li>
+					<li> / </li>
+					<li><a href="">Producto</a></li>
+				</ul>
+			</div> <!-- End of Breadcrumb-->
+
+			<div class="single-product">
+				<div class="images-section">
+					<div class="larg-img">
+						<img src="img/product/img1.jpg">
+					</div>
+					<div class="small-img">
+						<a class="fancybox" rel="group" href="img/product/img2.jpg">
+							<img src="img/product/img2.jpg">
+						</a>
+						<a class="fancybox" rel="group" href="img/product/img3.jpg">
+							<img src="img/product/img3.jpg">
+						</a>
+						<a class="fancybox" rel="group" href="img/product/img4.jpg">
+							<img src="img/product/img4.jpg">
+						</a>
+						<a class="fancybox" rel="group" href="img/product/img5.jpg">
+							<img src="img/product/img5.jpg">
+						</a>
+					</div>
+				</div> <!-- End of Images Section-->
+
+				<div class="product-detail">
+					<div class="product-name">
+						<h2>Mouse Redragon Impact M908</h2>
+					</div>
+					<div class="product-price">
+						<h3>450</h3>
+					</div>
+					<hr>
+					<div class="product-description">
+						<p>6 botones programables optimizados</p>
+						<p>Luz RGB</p>
+						<p>Modelo del sensor: PIXART 3360 óptico</p>
+						<p>Rueda de desplazamiento antideslizante</p>
+					</div>
+					<hr>
+					<div class="product-cart">
+						<form id="cart-form">
+							<div class="form-group">
+								<input type="number" class="cart-number" name="cartNumber" value="1" min="1" max="10">
+								<input type="submit" name="addToCart" value="Agregar a Carrito">
+							</div>
+						</form>
+						<form id="wishlist-form">
+							<div class="form-group">
+								<input type="checkbox" class="wishlist" name="wishlist"> Agregar a Mis Deseados
+							</div>
+						</form>
+					</div>
+					<hr>
+					<div class="product-meta">
+						<p><b>Categoría: </b> Periféricos</p>
+					</div>
+				</div> <!-- End of Product Detail-->
+			</div>
+			
+			<div class="new-product-section">
+				<div class="product-section-heading">
+					<h2> Productos Recomendados <img src="img/icons/good_quality.png"></h2>
+					<h3>Nuestros Mejores Productos</h3>
+				</div>
+				<div class="product-content">
+					<div class="product">
+						<a href="product.html">
+							<img src="img/product/img1.jpg">
+						</a>
+						<div class="product-detail">
+							<h3>Periféricos / Mouse</h3>
+							<h2>Mouse Redragon Impact</h2>
+							<a href="#">Agregar Al Carrito</a>
+							<p>450</p>
+						</div>
+					</div>
+					<div class="product">
+						<a href="product.html">
+							<img src="img/product/img2.jpg">
+						</a>
+						<div class="product-detail">
+							<h3>Periféricos / Teclados</h3>
+							<h2>Teclado Logitech K400</h2>
+							<a href="#">Agregar al Carrito</a>
+							<p>4500</p>
+						</div>
+					</div>
+					<div class="product">
+						<a href="product.html">
+							<img src="img/product/img3.jpg">
+						</a>
+						<div class="product-detail">
+							<h3>Periféricos / Teclados</h3>
+							<h2>Teclado T-Dagger Arena</h2>
+							<a href="#">Agregar al Carrito</a>
+							<p>4000</p>
+						</div>
+					</div>
+					<div class="product">
+						<a href="product.html">
+							<img src="img/product/img4.jpg">
+						</a>
+						<div class="product-detail">
+							<h3>Audio / Parlante</h3>
+							<h2>Parlante JBL Go 3</h2>
+							<a href="#">Agregar al Carrito</a>
+							<p>6500</p>
+						</div>						
+					</div>
+				</div>
+			</div> <!-- Recommend Product Section -->
+		</main> <!-- Main Area -->
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="footer-widget">
+				<div class="widget">
+					<div class="widget-heading">
+						<h3>Links Importantes</h3>
+					</div>
+					<div class="widget-content">
+						<ul>
+							<li><a href="about.html">Nosotros</a></li>
+							<li><a href="contact.html">Contacto</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="widget">
+					<div class="widget-heading">
+						<h3>Informacion</h3>
+					</div>
+					<div class="widget-content">
+						<ul>
+							<li><a href="account.html">Mi Cuenta</a></li>
+							<li><a href="orders.html">Mis Pedidos</a></li>
+							<li><a href="cart.html">Carrito</a></li>
+							<li><a href="checkout.html">Checkout</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="widget">
+					<div class="widget-heading">
+						<h3>Siguenos!</h3>
+					</div>
+					<div class="widget-content">
+						<div class="follow">
+							<ul>
+								<li><a href="#"><img src="img/icons/facebook.png"></a></li>
+								<li><a href="#"><img src="img/icons/twitter.png"></a></li>
+								<li><a href="#"><img src="img/icons/instagram.png"></a></li>
+							</ul>
+						</div>						
+					</div>
+					<div class="widget-heading">
+						<h3>Suscribete!</h3>
+					</div>
+					<div class="widget-content">
+						<div class="subscribe">
+							<form>
+								<div class="form-group">
+									<input type="text" class="form-control" name="subscribe" placeholder="Email">
+									<img src="img/icons/paper_plane.png">
+								</div>
+							</form>
+						</div>						
+					</div>
+				</div>
+			</div> <!-- Footer Widget -->
+			<div class="footer-bar">
+				<div class="copyright-text">
+					<p>Copyright 2022 - All Rights Reserved</p>
+				</div>
+				<div class="payment-mode">
+					<img src="img/icons/paper_money.png">
+					<img src="img/icons/visa.png">
+					<img src="img/icons/mastercard.png">
+				</div>
+			</div> <!-- Footer Bar -->
+		</div>
+	</footer> <!-- Footer Area -->
+
+</body>
+
+</html>
